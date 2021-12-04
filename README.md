@@ -35,7 +35,7 @@ python3 asl_recognizer_gui.py
 
 ### Model
 
-Initially, I trained the model on the VGG16 model architecture, but the results were not super accurate (~40.09% accuracy). The final model was trained on [Google's Inception-v3](https://arxiv.org/pdf/1512.00567.pdf) model, which is a convolutional neural network used in image analysis, objection detection, and object classification. 
+Initially, I trained the model on the [VGG16](https://arxiv.org/pdf/1409.1556.pdf) model architecture, but the results were not super accurate (~40.09% accuracy). The final model was trained on [Google's Inception-v3](https://arxiv.org/pdf/1512.00567.pdf) model, which is a convolutional neural network used in image analysis, objection detection, and object classification. 
 
 <img src="images/inceptionv3onc--oview.png">
 
