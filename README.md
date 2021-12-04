@@ -41,14 +41,8 @@ Initially, I trained the model on the [VGG16](https://arxiv.org/pdf/1409.1556.pd
 
 The model was trained on a Kaggle dataset of 87,000 images. There are 29 classes: 26 letters and space, delete, and blank. It uses transfer learning with data augmentation - the augmentation included cropping the images differently, changing the zoom and lighting. The Python notebook used to train the model was found in [this Github](https://github.com/VedantMistry13/American-Sign-Language-Recognition-using-Deep-Neural-Network/blob/master/American_Sign_Language_Recognition.ipynb) repo. The overall accuracy of this model was much higher (~96.43% test accuracy). The following is the results of training the model over 50 epochs.
 
-<div class="row">
-    <div class="column">
-        <img src="images/loss.png">
-    </div>
-    <div class="column">
-    <img src="images/accuracy.png">
-    </div>
-</div>
+![Accuracy](images/accuracy.png)
+![Loss](images/loss.png)
 
 ### GUI
 
