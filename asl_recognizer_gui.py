@@ -76,7 +76,7 @@ def run_application():
     # debouncing variables so it doesn't predict every single frame
     prev_guess = ''
     guess_count = 0
-    predict_buffer = 3
+    predict_buffer = 6
     time_count = 0
     time_buffer = 5
 
@@ -117,6 +117,9 @@ def run_application():
                 if guess_count >= predict_buffer and predicted_class != 'nothing':
                     # change rectangle color to indicate detection
                     cv2.rectangle(frame, (75, 175), (CROP_SIZE+75, CROP_SIZE+175), (0, 255, 0), 3)
+
+                    if predicted_class == 'space':
+                        predicted_class = ' '
                     translated_text += predicted_class
                     guess_count = 0
 

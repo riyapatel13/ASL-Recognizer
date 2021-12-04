@@ -1,0 +1,5 @@
+gTTS==2.2.3
+numpy==1.21.4
+opencv_python==4.5.4.60
+PySimpleGUI==4.55.1
+tensorflow==2.7.0
