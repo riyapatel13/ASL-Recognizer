@@ -76,9 +76,9 @@ def run_application():
     # debouncing variables so it doesn't predict every single frame
     prev_guess = ''
     guess_count = 0
-    predict_buffer = 6
+    predict_buffer = 4
     time_count = 0
-    time_buffer = 5
+    time_buffer = 1
 
 
     while True: 
@@ -106,7 +106,7 @@ def run_application():
             prediction_probability = prediction[0, prediction.argmax()]
 
 
-            if prediction_probability > 0.2:
+            if prediction_probability >= 0.25:
                 # debounce the predicted letter - must be guessed predict_buffer 
                 # times in a row
                 if prev_guess == predicted_class:
@@ -114,6 +114,11 @@ def run_application():
                 else:
                     prev_guess = predicted_class
                     guess_count = 1
+                
+                # print prediction probability for users
+                cv2.putText(frame, str(predicted_class)+' - '+str(round(prediction_probability*100,3))+'%', 
+                            (75, 145), 1, 2, (50,50,50), 2, cv2.LINE_AA)
+
                 if guess_count >= predict_buffer and predicted_class != 'nothing':
                     # change rectangle color to indicate detection
                     cv2.rectangle(frame, (75, 175), (CROP_SIZE+75, CROP_SIZE+175), (0, 255, 0), 3)
@@ -121,24 +126,18 @@ def run_application():
                     if predicted_class == 'space':
                         predicted_class = ' '
                     translated_text += predicted_class
-                    guess_count = 0
+                    #guess_count = 0
 
-                # print prediction probability for users
-                if prediction_probability > 0.5:
-                    # High confidence.
-                    cv2.putText(frame, '{} - {:.2f}%'.format(predicted_class, prediction_probability * 100), 
-                                            (75, 145), 1, 2, (113,113,113), 2, cv2.LINE_AA)
-                elif prediction_probability > 0.2 and prediction_probability <= 0.5:
-                    # Low confidence.
-                    cv2.putText(frame, 'Maybe {}... - {:.2f}%'.format(predicted_class, prediction_probability * 100), 
-                                            (75, 145), 1, 2, (113,113,113), 2, cv2.LINE_AA)
+
             else:
                 # No confidence.
-                cv2.putText(frame, "unable to detect", (75, 145), 1, 2, (113,113,113), 2, cv2.LINE_AA)
+                cv2.putText(frame, "unable to detect", (75, 145), 1, 2, (50,50,50), 2, cv2.LINE_AA)
             
             # reset variables
             if guess_count >= predict_buffer and time_count >= time_buffer:
                 time_count = 0
+                guess_count = 0
+                
 
         # Update stream.
         window['image'](data=cv2.imencode('.png', frame)[1].tobytes(), size=(1250,700))
