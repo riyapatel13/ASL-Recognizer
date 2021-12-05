@@ -3,7 +3,7 @@
 This repo contains code to perform automatic static American Sign Language recognition. This was created as part of Option B for the final project for [05-318: Human-AI Interaction](https://haiicmu.github.io/). The motivation stems from the fact that there exists a large communication barrier between deaf and hearing people, and the only way to mitigate it currently is through human interpreters (who are expensive and require human expertise) and handwriting (which is slow and impersonal). The goal of automatic ASL recognition is to get the human-level expertise at no cost, while maintaining human interaction. My project specifically focuses on the real-time detection and recognition of finger-spelling in ASL, which is used for spelling out names, addresses, and any proper nouns. 
 
 <p align="center">
-  ![Demo](images/asl_demo_gif.gif)
+  <img src="images/asl_demo_gif.gif">
 </p>
 
 ## Files Included
