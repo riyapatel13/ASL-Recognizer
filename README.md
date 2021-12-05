@@ -34,7 +34,7 @@ This repo contains code to perform automatic static American Sign Language recog
 ```
 This will install all packages and configure necessary dependencies needed for the code.
 
-2. Since the model was too big to upload to Github, first train the model (approx. 12 hours on my CPU) and save it by running the cells in American_Sign_Language_Recognition.ipynb. The first few cells about downloading the data from Kaggle are not necessary since the data has already been downloaded.
+2. Since the model was too big to upload to Github, first download the model from [this link](https://drive.google.com/file/d/1ufBMgNeSaNNiJo_HeoZZ-ykBTKzkY-SZ/view?usp=sharing) or train the model (approx. 12 hours on my CPU) and save it by running the cells in American_Sign_Language_Recognition.ipynb. The first few cells about downloading the data from Kaggle are not necessary since the data has already been downloaded.
 
 3. Once the model has been saved, run the following:
 ```bash
