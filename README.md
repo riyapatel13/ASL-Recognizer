@@ -6,12 +6,14 @@ This repo contains code to perform automatic static American Sign Language recog
   <img src="images/asl_demo_gif.gif">
 </p>
 
+
 ## Files Included
 
 * data 
   * Repo containing data files used for training and testing models. Data found from [Kaggle ASL Alphabet dataset](https://www.kaggle.com/grassknoted/asl-alphabet).
-* construct_models
-  * Repo containing Python notebooks to run to create and save models used in application. Did not include trained models because they were too large to store on Github (requires Git LFS).
+* models
+  * construct_models: Repo containing Python notebooks to run to create and save models used in application. 
+  * Included text files to Google Drive links for models because they were too large to store on Github (requires Git LFS). Models can be downloaded from Google Drive.
 * classes.txt
   * File to enumerate all the classes that the model trained on - used for prediction. 
 * asl_recognizer_gui.py
@@ -21,6 +23,8 @@ This repo contains code to perform automatic static American Sign Language recog
   * Repo for images in README.
 * requirements.txt
   * Python packages that need to be installed. 
+* ASL_Recognition_Video.mp4 
+  * Video for submission.
 
 ## Installation & Running Code
 
